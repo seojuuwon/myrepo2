@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="워터멜론 첫페이지.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="inner">
+            <video autoplay muted loop class="container">
+                <source src="background.mp4" type="video/mp4" />
+            </video>
+            <div class="cover">
+                <h1 class="title">Water <br /> Melon</h1>
+                <!-- 우리 네브 바 -->
+                <nav class="nav__bar">
+                    <div class="nav__item">
+                        <i class="fa-solid fa-list"> </i>
+                        <span class="charts1">CHARTS</span>
+                    </div>
+                    <div class="nav__item">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="music1">MUSIC</span>
+                    </div>
+                    <div class="nav__item">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span id="video1">VIDEO</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- 그림8개 섹션 -->
+    <section class="section">
+        <div class="inner">
+            <div class="section__title">NEW MUSIC</div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://thumbs.gfycat.com/BabyishInnocentAsianelephant-max-1mb.gif" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://thumbs.gfycat.com/AcceptableDefiantAntbear-size_restricted.gif" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://blog.kakaocdn.net/dn/bWy2vv/btq6GqfE5NV/Kw3A9ebkqhmAWHXckwHJi1/img.gif" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://blog.kakaocdn.net/dn/yOS46/btrBk9ndFGE/x9ydTTCbWGNDgDbiNBEOX0/img.gif" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://blog.kakaocdn.net/dn/bM2dGy/btrCMWtsdIW/qZKdzjmnbi4bqVolLabiO1/img.gif" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate" src="https://i.imgur.com/WLSgBcA.gif" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://media.tenor.com/4i_5W-GRZL0AAAAd/%EC%95%88%EC%9C%A0%EC%A7%84-%EC%9C%A0%EC%A7%84%EC%9C%A0%EC%A7%84.gif"
+                            alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://cdn.dealbada.com/data/editor/1803/f36a1b4ab7bcdf493a692667a01d999b_1520678655_0633.gif"
+                            alt="">
+                    </div>
+                </div>
+                <div class="btn-next swiper-button-next"></div>
+                <div class="btn-prev swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="inner">
+            <div class="section__title">CONSERT</div>
+            <div class="poster__container">
+                <div class="poster__item">
+                    <img src="https://ticketimage.interpark.com/Play/image/large/23/23006911_p.gif" class="poster"
+                        alt="">
+                </div>
+                <div class="poster__item">
+                    <img src="https://ticketimage.interpark.com/Play/image/large/23/23006541_p.gif" class="poster"
+                        alt="">
+                </div>
+                <div class="poster__item">
+                    <img src="https://ticketimage.interpark.com/Play/image/large/23/23007165_p.gif" class="poster"
+                        alt="">
+                </div>
+                <div class="poster__item">
+                    <img src="https://ticketimage.interpark.com/Play/image/large/23/23008938_p.gif" class="poster"
+                        alt="">
+                </div>
+                <div class="poster__item">
+                    <img src="https://ticketimage.interpark.com/Play/image/large/23/23004930_p.gif" class="poster"
+                        alt="">
+                </div>
+                <div class="poster__item">
+                    <img src="https://ticketimage.interpark.com/Play/image/large/23/23007654_p.gif" class="poster"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/15235ae2d2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./swiper.js"></script>
+    <script>
+        let chatrs1 = document.querySelector(".charts1");
+        let music1 = document.querySelector(".music1");
+        chatrs1.addEventListener('click', () => {
+            window.location.href = 'test3.html';
+        });
+        music1.addEventListener('click', () => {
+            window.location.href = 'subepage.html';
+        });
+    </script>
+</body>
+
+</html>

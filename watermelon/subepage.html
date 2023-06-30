@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="subpage.css">
+</head>
+<body>
+    <h1>Music</h1>
+    <div id="container">
+        <div class="sub">
+            <img src="./img/Hype_boy.png" alt="">
+            <button data-song="Hype boy">Hype boy</button>
+            <img src="./img/Dangerously.png" alt="">
+            <button data-song="Dangerously">Dangerously</button>
+            <img src="./img/Dive.png" alt="">
+            <button data-song="Shape of you">Shape of you</button>
+        </div>
+        <div class="sub">
+            <img src="./img/I_AM.png" alt="">
+            <button data-song="I AM">I AM</button>
+            <img src="./img/Spicy.png" alt="">
+            <button data-song="Spicy">Spicy</button>
+            <img src="./img/퀸카.png" alt="">
+            <button data-song="퀸카">퀸카</button>
+        </div>
+    </div>
+    <script>
+        const songs = {
+        "Hype boy": "Hype_boy.mp3",
+        "Dangerously": "Dangerously.mp3",
+        "Shape of you": "Shape of you.mp3",
+        "I AM": "I_AM.mp3",
+        "Spicy": "Spicy.mp3",
+        "퀸카": "퀸카.mp3"
+        };
+
+        let audioObj;
+        let currentSong;
+
+        function playOrPauseMusic(songName) {
+            if (!audioObj || currentSong !== songName) {
+                if (audioObj) {
+                    audioObj.pause();
+                }
+                currentSong = songName;
+                audioObj = new Audio(`music/${songs[songName]}`);
+                audioObj.play();
+            } else {
+                if (audioObj.paused) {
+                    audioObj.play();
+                } else {
+                    audioObj.pause();
+                }
+            }
+        }
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.matches("button[data-song]")) {
+                return;
+            }
+            const songName = event.target.getAttribute("data-song");
+            playOrPauseMusic(songName);
+        });
+    </script>
+</body>
+</html>

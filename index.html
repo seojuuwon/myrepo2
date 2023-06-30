@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="워터멜론 첫페이지.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="inner">
+            <video autoplay muted loop class="container">
+                <source src="background.mp4" type="video/mp4" />
+            </video>
+            <!-- 여기까지 -->
+            <div class="cover">
+                <h1 class="title">Water <br /> Melon</h1>
+                <!-- 우리 네브 바 -->
+                <nav class="nav__bar">
+                    <div class="nav__item charts1">
+                        <i class="fa-solid fa-list"> </i>
+                        <span>CHART<span>
+                    </div>
+                    <div class="nav__item music1">
+                        <i class="fa-solid fa-music"></i>
+                        <span>MUSIC<span>
+                    </div>
+                    <div class="nav__item video1">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span>VIDEO<span>
+                    </div>
+                </nav>
+                <!-- 노래 검색창 -->
+                <div class="search__container">
+                    <div class="search__control">
+                        <input type="text" id="search" onkeyup="enterKey()" placeholder="Search for a song" />
+                        <button class="search__btn" onclick="searchSongs()">Search</button>                    
+                    </div>
+                </div>
+                <div class="search__result" id="results"></div>            
+            </div>
+        </div>
+    </header>
+    <!-- 그림8개 섹션 -->
+    <section class="section">
+        <div class="inner">
+            <div class="section__title">🎵 NEW MUSIC</div>
+            <div class="swiper music__swiper music__container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://thumbs.gfycat.com/BabyishInnocentAsianelephant-max-1mb.gif" alt="">
+                        <img class="image static" src="./mv/gif_1.png" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://thumbs.gfycat.com/AcceptableDefiantAntbear-size_restricted.gif" alt="">
+                            <img class="image static" src="./mv/gif_2.png" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://blog.kakaocdn.net/dn/bWy2vv/btq6GqfE5NV/Kw3A9ebkqhmAWHXckwHJi1/img.gif" alt="">
+                        <img class="image static" src="./mv/gif_3.png" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://blog.kakaocdn.net/dn/yOS46/btrBk9ndFGE/x9ydTTCbWGNDgDbiNBEOX0/img.gif" alt="">
+                        <img class="image static" src="./mv/gif_4.png" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://blog.kakaocdn.net/dn/bM2dGy/btrCMWtsdIW/qZKdzjmnbi4bqVolLabiO1/img.gif" alt="">
+                        <img class="image static" src="./mv/gif_5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://media.tenor.com/4i_5W-GRZL0AAAAd/%EC%95%88%EC%9C%A0%EC%A7%84-%EC%9C%A0%EC%A7%84%EC%9C%A0%EC%A7%84.gif"
+                            alt="">
+                        <img class="image static" src="./mv/gif_6.png" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://cdn.dealbada.com/data/editor/1803/f36a1b4ab7bcdf493a692667a01d999b_1520678655_0633.gif"
+                            alt="">
+                        <img class="image static" src="./mv/gif_7.png" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://thumbs.gfycat.com/SociableAppropriateIberianbarbel-size_restricted.gif" alt="">
+                        <img class="image static" src="./mv/gif_8.png" alt="">
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://i.pinimg.com/originals/1a/4b/6b/1a4b6b0db0b1e6b3c00bc8fd6490d34d.gif" alt="">
+                        <img class="image static" src="./mv/gif_9.png" alt="">                    
+                    </div>
+                    <div class="swiper-slide image__item">
+                        <img class="image animate"
+                            src="https://thumbs.gfycat.com/VictoriousClassicHusky-size_restricted.gif" alt="">
+                        <img class="image static" src="./mv/gif_10.png" alt="">
+                    </div>
+                </div>
+                <div class="btn-next swiper-button-next"></div>
+                <div class="btn-prev swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="inner">
+            <div class="section__title">🪩 CONSERT</div>
+            <div class="swiper poster__swiper poster__container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide poster__item">
+                        <img src="https://ticketimage.interpark.com/Play/image/large/23/23006911_p.gif" class="poster"
+                            alt="">
+                    </div>
+                    <div class="swiper-slide poster__item">
+                        <img src="https://ticketimage.interpark.com/Play/image/large/23/23006541_p.gif" class="poster"
+                            alt="">
+                    </div>
+                    <div class="swiper-slide poster__item">
+                        <img src="https://ticketimage.interpark.com/Play/image/large/23/23007165_p.gif" class="poster"
+                            alt="">
+                    </div>
+                    <div class="swiper-slide poster__item">
+                        <img src="https://ticketimage.interpark.com/Play/image/large/23/23008938_p.gif" class="poster"
+                            alt="">
+                    </div>
+                    <div class="swiper-slide poster__item">
+                        <img src="https://ticketimage.interpark.com/Play/image/large/23/23004930_p.gif" class="poster"
+                            alt="">
+                    </div>
+                </div>
+                <div class="btn-next swiper-button-next"></div>
+                <div class="btn-prev swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        &copy;copyright 2023. all right reserved.
+    </footer>
+<!-- 결과창 끝 -->
+    <script src="https://kit.fontawesome.com/15235ae2d2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script src="spotipy.js"></script>
+    <script src="./swiper.js"></script>
+</body>
+
+</html>
+<!-- html로 넘어가는 창 -->
+<script>
+    let chatrs1 = document.querySelector(".charts1");
+    let music1 = document.querySelector(".music1");
+    let video1 = document.querySelector(".video1");
+    chatrs1.addEventListener('click', () => {
+        window.location.href = 'chart.html';
+    });
+    music1.addEventListener('click', () => {
+        window.location.href = 'subepage.html';
+    });
+    video1.addEventListener('click', () => {
+        window.location.href = 'vedio.html';
+    });
+</script>
+</body>
+
+</html>

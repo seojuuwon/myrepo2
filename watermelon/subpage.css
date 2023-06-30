@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faf7f7;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 50px;
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+.sub {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.sub img {
+    max-width: 90%;
+    height: auto;
+}
+button {
+border: none;
+background: none;
+padding: 0;
+cursor: pointer;
+font-size: 24px; /* 버튼 글꼴 크기 */
+padding: 10px 20px; /* 버튼 내부 여백 */
+}

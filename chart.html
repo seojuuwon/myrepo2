@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워터멜론 Top 50</title>
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./chart.css" />
+</head>
+
+<body>
+    <!-- TOP50 리스트 제목 -->
+    <header class="header">
+        <div>
+            <h1 class="header__title">
+                TOP50
+            </h1>
+        </div>
+    </header>
+    <nav class="nav__top">
+        <div class="top">
+            <span>순위</span>
+            <span>곡</span>
+            <span>아티스트</span>
+            <span>듣기</span>
+            <span>담기</span>
+            <span>다운</span>
+            <span>뮤비</span>
+            <span>앨범</span>
+        </div>
+    </nav>
+    <div class="song-container" id="song-container">
+        <!-- Songs will be added here -->
+    </div>
+    <audio id="audioPlayer" style="display: none;">
+        <source id="audioSource" src="" type="audio/mp3">
+    </audio>
+    <footer class="footer">
+        &copy;copyright 2023. all right reserved.
+    </footer>
+    <script src="https://kit.fontawesome.com/15235ae2d2.js" crossorigin="anonymous"></script>
+    <script>
+        const API_KEY = "91a7bbba442bb17038f1401896e7fe46"; // API_KEY
+        const songContainer = document.getElementById("song-container");
+
+        async function fetchWebApi() {
+            const res = await fetch(`https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${API_KEY}&format=json`);
+            return await res.json();
+        }
+        const audioPlayer = document.getElementById("audioPlayer");
+        const audioSource = document.getElementById("audioSource");
+
+        function playMusic(filePath) {
+            const isSameTrack = audioSource.src.includes(filePath);
+
+            if (audioPlayer.paused || !isSameTrack) {
+                if (!isSameTrack) {
+                    audioSource.src = filePath;
+                    audioPlayer.load();
+                }
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        }
+        function displayTracks(tracks) {
+            songContainer.innerHTML = '';
+
+            tracks.forEach((track, index) => {
+                const listItem = document.createElement("div");
+                listItem.className = "song-item";
+
+                listItem.innerHTML = `
+                    <div class="rank">${index + 1}</div>
+                    <div class="song-title">${track.name}</div>
+                    <div class="artist">${track.artist.name}</div>
+                    <div class="listen"><i class="fa-solid fa-play"></i></div>
+                    <div class="add"><i class="fa-solid fa-folder"></i></div>
+                    <div class="download"><i class="fa-solid fa-download"></i></div>
+                    <div class="mv"><i class="fa-solid fa-video"></i></div>
+                    <div class="song">
+                        <img class="album-cover" src="album_covers/album_cover_${index + 1}.jpg" alt="${track.name} - ${track.artist.name}" />
+                    </div>
+                `;
+
+                listItem.querySelector(".listen").onclick = function() {
+                    playMusic(`audio/audio_${index + 1}.mp3`);
+                };
+
+                listItem.querySelector(".mv").onclick = function() {
+                    window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(track.name)}+${encodeURIComponent(track.artist.name)}`, "_blank", "width=640,height=480");
+                };
+                songContainer.appendChild(listItem);
+            });
+        }
+        async function handleOnClick() {
+            const response = await fetchWebApi();
+            displayTracks(response.tracks.track);
+        }
+
+        // 페이지 로드 시 앨범 목록을 가져옵니다.
+        handleOnClick();
+    </script>
+</body>
+
+</html>
